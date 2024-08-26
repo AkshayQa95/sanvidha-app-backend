@@ -46,13 +46,11 @@ const createCurrentUser = async (req: Request, res: Response) => {
         console.log(error);
         console.error("Error creating user:", error);
         res.status(500).json({message: "Error creating user"});
-
     }
 };
 
 const updateCurrentUser = async (req: Request, res:Response) => {
     try{
-
         const{name, addressLine1, country, city} = req.body;
         const user = await User.findById(req.userId);
 
